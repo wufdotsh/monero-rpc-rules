@@ -1,1 +1,14 @@
 # monero-rpc-rules
+
+## Nginx Location Block
+
+```
+location ~ ^/(json_rpc|get_alt_blocks_hashes|get_blocks\.bin|getblocks\.bin|get_blocks_by_height\.bin|getblocks_by_height\.bin|get_hashes\.bin|gethashes\.bin|get_height|getheight|get_info|getinfo|get_limit|get_net_stats|get_o_indexes\.bin|get_output_distribution\.bin|get_outs|get_outs\.bin|get_peer_list|get_public_nodes|get_transaction_pool|get_transaction_pool_hashes|get_transaction_pool_hashes\.bin|get_transaction_pool_stats|get_transactions|gettransactions|in_peers|is_key_image_spent|mining_status|out_peers|pop_blocks|save_bc|send_raw_transaction|sendrawtransaction|set_bootstrap_daemon|set_limit|set_log_categories|set_log_hash_rate|set_log_level|start_mining|stop_daemon|stop_mining|update)$ {}
+```
+
+## Cloudflare Rule:
+
+```
+Cloudflare Rule:
+(http.request.uri.path eq "/json_rpc") or (http.request.uri.path eq "/get_alt_blocks_hashes") or (http.request.uri.path eq "/get_blocks.bin") or (http.request.uri.path eq "/getblocks.bin") or (http.request.uri.path eq "/get_blocks_by_height.bin") or (http.request.uri.path eq "/getblocks_by_height.bin") or (http.request.uri.path eq "/get_hashes.bin") or (http.request.uri.path eq "/gethashes.bin") or (http.request.uri.path eq "/get_height") or (http.request.uri.path eq "/getheight") or (http.request.uri.path eq "/get_info") or (http.request.uri.path eq "/getinfo") or (http.request.uri.path eq "/get_limit") or (http.request.uri.path eq "/get_net_stats") or (http.request.uri.path eq "/get_o_indexes.bin") or (http.request.uri.path eq "/get_output_distribution.bin") or (http.request.uri.path eq "/get_outs") or (http.request.uri.path eq "/get_outs.bin") or (http.request.uri.path eq "/get_peer_list") or (http.request.uri.path eq "/get_public_nodes") or (http.request.uri.path eq "/get_transaction_pool") or (http.request.uri.path eq "/get_transaction_pool_hashes") or (http.request.uri.path eq "/get_transaction_pool_hashes.bin") or (http.request.uri.path eq "/get_transaction_pool_stats") or (http.request.uri.path eq "/get_transactions") or (http.request.uri.path eq "/gettransactions") or (http.request.uri.path eq "/in_peers") or (http.request.uri.path eq "/is_key_image_spent") or (http.request.uri.path eq "/mining_status") or (http.request.uri.path eq "/out_peers") or (http.request.uri.path eq "/pop_blocks") or (http.request.uri.path eq "/save_bc") or (http.request.uri.path eq "/send_raw_transaction") or (http.request.uri.path eq "/sendrawtransaction") or (http.request.uri.path eq "/set_bootstrap_daemon") or (http.request.uri.path eq "/set_limit") or (http.request.uri.path eq "/set_log_categories") or (http.request.uri.path eq "/set_log_hash_rate") or (http.request.uri.path eq "/set_log_level") or (http.request.uri.path eq "/start_mining") or (http.request.uri.path eq "/stop_daemon") or (http.request.uri.path eq "/stop_mining") or (http.request.uri.path eq "/update")
+```
